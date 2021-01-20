@@ -1,6 +1,6 @@
 'use strict'
 
-debugger;
+// debugger;
 const MINE = '💣';
 const FLAG = '🚩';
 
@@ -38,7 +38,7 @@ function buildBoard() {
                 minesAroundCount: 0,
                 isShown: false,
                 isMine: false,
-                isMarked: true
+                isMarked: false
             };
             // if (i === 1 && j === 1 || i === 2 && j === 2) {
             //     board[i][j].isMine = true;
@@ -96,7 +96,6 @@ function cellClicked(elCell, i, j) {
     gGame.isOn = true;
     if (gBoard[i][j].isShown === true) return;
     var value;
-    gBoard[i][j].isShown = true;
     console.log('elCell', elCell)
     console.log('elCell2', elCell.innerHTML)
     if (gBoard[i][j].isMine) {
@@ -109,6 +108,7 @@ function cellClicked(elCell, i, j) {
         expandShown(gBoard, elCell, i, j)
         return;
     }
+    gBoard[i][j].isShown = true;
     // elCell.innerText = gBoard[i][j];
     renderCell(i, j, value);
     checkGameOver();
@@ -169,12 +169,13 @@ function expandShown(board, elCell, cellI, cellJ) {
         if (i < 0 || i >= board.length) continue;
         for (var j = cellJ - 1; j <= cellJ + 1; j++) {
             if (j < 0 || j >= board[i].length) continue;
-            // if(board[i][j].isShown || board[i][j].isMarked) continue;
+            if(board[i][j].isShown || board[i][j].isMarked) continue;
             if (board[i][j].minesAroundCount) {
                 value = board[i][j].minesAroundCount;
             } else if (!board[i][j].minesAroundCount) {
                 value = 'non';
             }
+            gBoard[i][j].isShown = true;
             gGame.shownCount++;
             renderCell(i, j, value);
         }
