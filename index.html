@@ -1,27 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mine Sweeper</title>
+    <title>Minesweeper</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body onload="initGame()">
-    <!-- onkeyup="handleKey(event)" -->
-    <!-- onclick="countUpTimer()" oncontextmenu="countUpTimer()" -->
+    <h1>Minesweeper</h1>
+    <div class="mine-alert">
+        <h3>Mine Alert!</h3>
+    </div>
+
+    <div class="introduction">
+        <ul>
+            <li>Befor Start: choose: LIVES / Game Level</li>
+            <li>During game: option ask for Hints 💡</li>
+            <li>Press 😀 or Game Level to Restart</li>
+        </ul>
+    </div>
+    <br>
     <label class="minutes">00</label>
     <label class="colon">:</label>
     <label class="seconds">00</label>
+    <br>
+    <h3>To difficult - get lives:</h3>
+    <button onclick="getLives(1)">1 LIVES</button>
+    <button onclick="getLives(2)">2 LIVES</button>
+    <button onclick="getLives(3)">3 LIVES</button>
 
-    <h1>Mine Sweeper</h1>
+    <br>
+    <div class="level">
+        <button onclick="gameLevel(1)">Beginner</button>
+        <button onclick="gameLevel(2)">Medium</button>
+        <button onclick="gameLevel(3)">Expert</button>
+    </div>
 
-    <table border="1" cellpadding="10">
-        <tbody class="board"></tbody>
+    <div class="hints">
+        <button class="hint1" onclick="getHint(this, 1)">💡</button>
+        <button class="hint2" onclick="getHint(this, 2)">💡</button>
+        <button class="hint3" onclick="getHint(this, 3)">💡</button>
+    </div>
+
+    <br><br>
+    <button class="start" onclick="playAgain()">😀</button>
+    <br>
+    <table class="board" border="1" cellpadding="10">
+        <tbody></tbody>
     </table>
-    
 
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

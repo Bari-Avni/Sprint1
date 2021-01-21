@@ -3,7 +3,6 @@ function drawNum(nums) {
     var idx = getRandomInt(0, nums.length);
     var num = nums[idx];
     nums.splice(idx, 1);
-    console.log('num', num);
     return num;
 }
 
@@ -14,7 +13,7 @@ function getRandomInt(min, max) {
 }
 
 function countUpTimer() {
-    setInterval(setTime, 1000);
+    gGameTimer = setInterval(setTime, 1000);
 }
 
 function setTime() {
@@ -33,5 +32,3 @@ function pad(val) {
         return valString;
     }
 }
-
-
