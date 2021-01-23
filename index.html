@@ -21,21 +21,27 @@
             <li>Press 😀 or Game Level to Restart</li>
         </ul>
     </div>
+    <div class="score">
+        <span class="score-title">Best Score (fastest)</span>
+        Beginner:<span class="beginner">0</span><br>
+        Medium:<span class="medium">0</span><br>
+        Expert:<span class="expert">0</span>
+    </div>
     <br>
-    <label class="minutes">00</label>
-    <label class="colon">:</label>
-    <label class="seconds">00</label>
     <br>
-    <h3>To difficult - get lives:</h3>
-    <button onclick="getLives(1)">1 LIVES</button>
-    <button onclick="getLives(2)">2 LIVES</button>
-    <button onclick="getLives(3)">3 LIVES</button>
+    <div class="lives">
+        <button class="lives1" onclick="getLives(this, 1)">1 LIVES</button>
+        <button class="lives2" onclick="getLives(this, 2)">2 LIVES</button>
+        <button class="lives3" onclick="getLives(this, 3)">3 LIVES</button>
+    </div>
 
+    <button class="reset-score" onclick="resetBestScores()">Reset Score</button>
+    <br>
     <br>
     <div class="level">
-        <button onclick="gameLevel(1)">Beginner</button>
-        <button onclick="gameLevel(2)">Medium</button>
-        <button onclick="gameLevel(3)">Expert</button>
+        <button class="level-1" onclick="gameLevel(1)">Beginner</button>
+        <button class="level-2" onclick="gameLevel(2)">Medium</button>
+        <button class="level-3" onclick="gameLevel(3)">Expert</button>
     </div>
 
     <div class="hints">
@@ -43,8 +49,17 @@
         <button class="hint2" onclick="getHint(this, 2)">💡</button>
         <button class="hint3" onclick="getHint(this, 3)">💡</button>
     </div>
+    <div class="safe-click">
+        <button onclick="safeClick()">Safe Clik<br><span>3</span> clicks left</button><br>
+    </div>
+    <br>
+    <br>
+    <div class="timer">
+        <label class="minutes">00</label>
+        <label class="colon">:</label>
+        <label class="seconds">00</label>
+    </div>
 
-    <br><br>
     <button class="start" onclick="playAgain()">😀</button>
     <br>
     <table class="board" border="1" cellpadding="10">

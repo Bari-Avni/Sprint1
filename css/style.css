@@ -1,26 +1,41 @@
 body {
-background-color: burlywood;
-text-align: center;
-margin: 0;
+    background-color: burlywood;
+    text-align: center;
+    margin: 0;
 }
 
 .introduction {
     width: 320px;
+    height: 90px;
     border: blue solid;
     text-align: left;
-    margin: auto;
+    display: inline-block;
 }
 
-.minutes {
-    font-size: 20px;
+.score {
+    width: 140px;
+    height: 90px;
+    display: inline-block;
+    border: blue solid;
+    padding-left: 10px;
+    text-align: left;
+    margin-left: 20px;
 }
 
-.colon {
-    font-size: 20px;
+.score-title {
+    text-decoration: solid underline;
 }
 
-.seconds {
-    font-size: 20px;
+button {
+    cursor: pointer;
+}
+
+.lives {
+    display: inline-block;
+}
+
+.reset-score {
+    margin-left: 130px;
 }
 
 .mine-alert {
@@ -33,27 +48,33 @@ margin: 0;
     right: 50px;
 }
 
-button {
-    cursor: pointer;
+.level {
+    display: inline-block;
+    margin-right: 40px;
 }
 
-h3 {
+.hints {
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.hints button {
+    width: 30px;
+}
+
+.safe-click {
+    display: inline-block;
+}
+
+.timer {
+    font-size: 20px;
+    margin-right: 50px;
     display: inline-block;
 }
 
 .start {
     font-size: 20px;
-}
-
-.level{
-    display: inline-block;
-    margin-right: 30px;
-}
-
-.hints {
-    display: inline-block;
-    position: absolute;
-
+    margin-bottom: 5px;
 }
 
 .board {
